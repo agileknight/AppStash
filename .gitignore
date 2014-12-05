@@ -1,2 +1,12 @@
 .idea/
 experiments/native-app/atom-shell*
+.gradle/
+*.iml
+*.ipr
+*.iws
+buildSrc/
+classes/
+microservice/
+monolithic/
+out/
+vagrant/
