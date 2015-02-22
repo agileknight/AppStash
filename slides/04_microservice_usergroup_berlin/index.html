@@ -626,12 +626,98 @@ catalog:
 
   <slide>
     <hgroup>
-      <h2>Cluster Management</h2>
+      <h2>Kubernetes - Cluster Management</h2>
     </hgroup>
     <article class="flexbox vcenter">
       <section>
         <object data="../master/images/graph-01.svg" type="image/svg+xml" style="height: 450px; width: 100%"></object>
       </section>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Pod</h2>
+    </hgroup>
+    <article >
+      <pre class="prettyprint" data-lang="javascript">
+{ "id": "mongodb",
+  "kind": "Pod",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "manifest": {
+      "containers": [ {
+          "name": "mongodb",
+          "image": "dockerfile/mongodb",
+          "ports": [
+            {
+              "containerPort": 27017,
+              "hostPort": 27017
+} } } ] } ] }
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Replication Controller</h2>
+    </hgroup>
+    <article >
+      <pre class="prettyprint" data-lang="javascript">
+{ "id": "product",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 2,
+    "podTemplate": {
+      "desiredState": {
+        "manifest": {
+          "containers": [
+            {
+              "name": "product",
+              "image": "zutherb/product-service",
+              "cpu": 100,
+              "memory": 50000000,
+              "ports": [ { "containerPort": 18080, "hostPort": 18080} ] },
+          "labels": { "name": "product", "uses": "mongodb" } } } } } }
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Service</h2>
+    </hgroup>
+    <article >
+      <pre class="prettyprint" data-lang="javascript">
+{ "id": "product",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "port": 18080,
+  "containerPort": 18080,
+  "selector": { "name": "product" },
+  "labels": { "name": "product" } }
+      </pre>
+      <pre class="prettyprint" data-lang="bash">
+PRODUCT_PORT_18080_TCP=tcp://10.0.0.11:18080
+PRODUCT_PORT_18080_TCP_PROTO=tcp
+PRODUCT_PORT_18080_TCP_PORT=18080
+PRODUCT_PORT_18080_TCP_ADDR=10.0.0.11
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Alternatives</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Mesos - abstracts CPU, memory, storage</li>
+        <li>Marathon - REST API for starting, stopping, and scaling applications</li>
+        <li>HAProxy - load balancing and proxying for TCP and HTTP-based applications</li>
+        <li>Bamboo - configures HAProxy for web services deployed on Apache Mesos and Marathon</li>
+      </ul>
     </article>
   </slide>
 
