@@ -17,21 +17,28 @@
 </head>
 <body style="opacity: 0">
 
-<slides>
+<slides class="layout-widescreen">
 
-  <slide class="title-slide segue nobackground" style="background-image:url(confess_first.png); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+  <slide class="logoslide nobackground">
     <article class="flexbox vcenter">
-      <hgroup class="auto-fadein" style="bottom: 170px; left: 50px;">
-        <h1 data-config-title><!-- populated from slide_config.json --></h1>
-
-        <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
-
-        <p data-config-presenter><!-- populated from slide_config.json --></p>
-      </hgroup>
+      <span><img src="../master/images/codecentric-logo.png"></span>
     </article>
   </slide>
 
-  <slide style="background-image:url(../master/images/bob.jpg); ); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar">
+      <img src="../master/images/codecentric-logo-only.png">
+    </aside>
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image:url(../master/images/bob.jpg); ); background-position: center center; background-repeat: no-repeat; background-size: cover;">
     <article>
       <section>
         <ul class="speakers">
@@ -67,12 +74,20 @@
     </article>
   </slide>
 
-  <slide class="fill nobackground" style="background-image:url(../master/images/microservice-appserver.png);">
+  <slide class="fill nobackground" style="background-image:url(../master/images/kaufrausch.jpg);">
     <article class="flexbox vcenter">
       <section class="textbox">
-        <h1>Warning</h1>
-        <h2 style="margin-top: 30px">This is based on two real projects,</h2>
-        <h2>but maybe parts of story or tools are alienated.</h2>
+        <h1>Get Out of the Building</h1>
+        <h2 style="margin-top: 30px">This talk is based on two real projects.</h2>
+        <h2>The demo application contains the techology stack and all concepts which was learned in this projects.</h2>
+        <a href="https://github.com/zutherb/AppStash/">
+          <h2>https://github.com/zutherb/AppStash/</h2>
+        </a>
+
+        <img src="../master/images/qrcode.svg" />
+        <a href="https://github.com/zutherb/AppStash/">
+          <img style="position: absolute; top: 0; right: 0; border: 0;" src="github.png" alt="Fork me on GitHub" data-canonical-src="forkme_right_red_aa0000.png">
+        </a>
       </section>
     </article>
   </slide>
@@ -110,9 +125,9 @@
     </article>
   </slide>
 
-  <slide style="background-image:url(../master/images/toogle.jpg);">
+  <slide class="fill nobackground" style="background-image:url(../master/images/toogle.jpg);">
     <hgroup>
-      <h2 style="color: #ffffff">FeatureToggle</h2>
+      <h2>FeatureToggle</h2>
     </hgroup>
     <article >
       <pre class="prettyprint" data-lang="java">
@@ -556,7 +571,17 @@ public class TopSellerRecommendationPanel extends AbstractShopBasePanel {
   </slide>
 
   <slide class="fill nobackground" style="background-image:url(../master/images/delivery_car.jpg);">
-    <aside class="gdbar bottom"><img src="../master/images/youtube.png"></aside>
+    <article class="flexbox vcenter">
+      <section class="textbox">
+        <h1>How can we package and distribute our services?</h1>
+      </section>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image:url(../master/images/monolith_pipeline.png);">
+  </slide>
+
+  <slide class="fill nobackground" style="background-image:url(../master/images/microservice_pipeline.png);">
   </slide>
 
   <slide>
@@ -603,7 +628,7 @@ public class TopSellerRecommendationPanel extends AbstractShopBasePanel {
     </article>
   </slide>
 
-  <slide class="fill nobackground">
+  <slide>
     <hgroup>
       <h2>Docker Environment</h2>
     </hgroup>
@@ -625,7 +650,7 @@ public class TopSellerRecommendationPanel extends AbstractShopBasePanel {
 
   <slide class="fill nobackground" style="background-image:url(../master/images/pod.jpg);">
     <hgroup>
-      <h2 style="color: #ffffff">Pod</h2>
+      <h2>Pod</h2>
     </hgroup>
     <article >
       <pre class="prettyprint" data-lang="yaml">
@@ -644,7 +669,7 @@ desiredState:
 
   <slide class="fill nobackground" style="background-image:url(../master/images/clone.jpg);">
     <hgroup>
-      <h2 style="color: #ffffff">Replication Controller</h2>
+      <h2>Replication Controller</h2>
     </hgroup>
     <article >
       <pre class="prettyprint" data-lang="yaml">
@@ -660,7 +685,7 @@ desiredState:
     </article>
   </slide>
 
-  <slide  style="background-image:url(../master/images/service.jpg);">
+  <slide class="fill nobackground" style="background-image:url(../master/images/service.jpg);">
     <hgroup>
       <h2>Service</h2>
     </hgroup>
@@ -679,7 +704,49 @@ desiredState:
   </slide>
 
   <slide class="fill nobackground" style="background-image:url(../master/images/zookeeper.jpg);">
-    <aside class="gdbar bottom"><img src="../master/images/youtube.png"></aside>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Icinga / Nagios</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <section>
+        <iframe height="211" frameborder="0" src="devops_tweet.html" scrolling="no" allowtransparency="true" class="twitter-tweet twitter-tweet-rendered" allowfullscreen="" style="border-width: 1px; border-style: solid; border-color: rgb(238, 238, 238) rgb(221, 221, 221) rgb(187, 187, 187); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; max-width: 99%; min-width: 220px; margin: 10px 0px; padding: 0px; display: block; position: static; visibility: visible; border-radius: 5px; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15); width: 500px;" title="Eingebetteter Tweet"></iframe>
+      </section>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image:url(../master/images/icinga_1.png);">
+    <hgroup>
+      <h2>Availability - Big Data for DevOps</h2>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image:url(../master/images/icinga_2.png);">
+    <hgroup>
+      <h2>Availability - Big Data for DevOps</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <section style="padding-top: 400px">
+        <ul>
+          <li>Mean Time To Failure (MTTF)</li>
+          <li>Mean Time To Recover (MTTR)</li>
+        </ul>
+      </section>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image:url(../master/images/kibana_1.png);">
+    <hgroup>
+      <h2>Analysis Failures - Big Data for DevOps</h2>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image:url(../master/images/kibana_2.png);">
+    <hgroup>
+      <h2>Research Customers  - Big Data for POs</h2>
+    </hgroup>
   </slide>
 
   <slide class="fill nobackground" style="background-image:url(../master/images/crowd.jpg);">
@@ -700,7 +767,7 @@ desiredState:
 
   <slide class="fill nobackground" style="background-image:url(../master/images/light_at_the_end_of_the_tunnel.jpg);">
     <hgroup>
-      <h2 style="color: #ffffff">Summary</h2>
+      <h2>Summary</h2>
     </hgroup>
     <article>
       <table style="font-size: 0.8em; background-color: #ffffff">
@@ -734,7 +801,7 @@ desiredState:
     </article>
   </slide>
 
-  <slide class="thank-you-slide segue nobackground current">
+  <slide class="thank-you-slide segue nobackground current" style="background: url(../master/images/innovate_or_die.jpg) no-repeat center center fixed;  background-size: cover;">
     <aside class="gdbar right"><img src="../master/images/bernd-zuther.jpeg"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>&lt;Thank You!&gt;</h2>
@@ -927,6 +994,11 @@ desiredState:
     <article>
       <section>
         <ul>
+          <li>
+            <a href="https://www.flickr.com/photos/andoline/8238145299">
+              Kaufrausch
+            </a>
+          </li>
           <li>
             <a href="https://www.flickr.com/photos/marfis75/2939337382">
               Café con leche - Milchkaffee (CC)
